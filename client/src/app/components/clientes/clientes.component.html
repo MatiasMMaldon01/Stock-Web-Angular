@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="col-md-14 mt-5">
+        <table class='table table-white'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre Completo</th>
+                    <th>DNI</th>
+                    <th>Email</th>
+                    <th>Localidad</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let item of clientes'>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.apellido}}, {{item.nombre}}</td>
+                    <td>{{item.dni}}</td>
+                    <td>{{item.Usuario.email}}</td>
+                    <td>{{item.Localidade.descripcion}}</td>               
+                    <td> 
+                        <a (click)="eliminarCliente(item.id)" class='btn btn-danger'><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

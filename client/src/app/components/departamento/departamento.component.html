@@ -1,0 +1,47 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-4 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" [(ngModel)]='departamento.descripcion' placeholder="Ingrese la descripcion" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <select name="paises" [(ngModel)]= 'departamento.provincia_id' class="form-control">
+                                <option *ngFor= "let provincia of provincias" value={{provincia.id}}>{{provincia.descripcion}}</option>
+                            </select>
+                        </div>
+                    <button class= "btn btn-success btn-block" (click)='modificar ? modificarDepartamento() : agregarDepartamento()'>Guardar</button>             
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-md-12 mt-5">
+            <table class='table table-white'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Provincia</th>
+                        <th>Departamento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor='let item of departamentos'>
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.Provincia.descripcion}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td> 
+                            <a (click)="eliminarDepartamento(item.id)" class='btn btn-danger'><i class="fas fa-trash-alt"></i></a>
+                            <a [routerLink]="['/departamento/modificar', item.id]" class='btn btn-info'><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+

@@ -1,0 +1,76 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">EzTech</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a routerLink="" routerLinkActive='Active'>
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Inicio</span>
+        </a>
+         <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+       <a routerLink= "/perfil" routerLinkActive="Active">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Perfil</span>
+       </a>
+       <span class="tooltip">Perfil</span>
+     </li>
+     <li>
+       <a >
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a >
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a routerLink= "/misFacturas" routerLinkActive="Active">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">Tus compras</span>
+       </a>
+       <span class="tooltip">Tus compras</span>
+     </li>
+     <li>
+       <a (click)= "abrirCarrito()">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Carrito</span>
+       </a>
+       <span class="tooltip">Carrito</span>
+     </li>
+     <li>
+       <a>
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a>
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name_job" >
+             <div class="name">{{cliente.apellido}} {{cliente.nombre}}</div>
+             <div class="email">{{cliente.Usuario.email}}</div>
+           </div>
+         </div>
+          <i (click)="cerrarSesion()" class='bx bx-log-out' id="log_out"></i>
+     </li>
+    </ul>
+  </div>

@@ -1,0 +1,13 @@
+.contenedor{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,16,29,1) 70%, rgba(82,55,122,1) 100%);
+}
+
+.title{
+    margin: 30px 0px 20px 35%;
+    color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

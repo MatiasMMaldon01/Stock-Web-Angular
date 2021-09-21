@@ -1,0 +1,36 @@
+<app-side-bar></app-side-bar>
+<section class="home-section">
+  <div class="container">
+      <h2 class="title" *ngIf="productos.length !== 0"> Este es tu Carrito</h2>
+      <h2 class="title" *ngIf="productos.length === 0"> Tu Carrito esta Vacio</h2>
+    <div class="col-md-12 mt-5">
+      <table class='table table-white' *ngIf="productos.length !== 0">
+          <thead class='thead-dark'>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+            <th>Precio Un.</th>
+            <th>Subtotal</th>
+            <th></th>
+          </thead>
+          <tbody class="tbody-white" *ngFor='let producto of productos'>
+              <tr>
+                  <td><img src="{{producto.imagen}}" alt="Producto" width="100px" height="80px"></td>
+                  <td>{{producto.descripcion}}</td>
+                  <td>{{producto.cantidad}}</td>
+                  <td>${{producto.precioVenta}}</td>
+                  <td>${{producto.subtotal}}</td>
+                  <td> 
+                    <a (click)="eliminarProducto(producto.id)" class='btn btn-danger'><i class="fas fa-trash-alt"></i></a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="col-md-8 offset-md-8 mt-5">
+      <h2 class="total" *ngIf="productos.length !== 0">Precio Total: ${{total}}</h2>
+      <button class="btn btn-success" *ngIf="productos.length !== 0" (click)= "finalizarCompra()">Finalizar Compra</button>
+      <button class="btn btn-info"routerLink="" routerLinkActive= "Active">Seguir comparando</button>
+    </div> 
+  </div>
+</section>

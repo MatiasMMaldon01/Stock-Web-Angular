@@ -1,0 +1,29 @@
+.bg-dark {
+  background-color: #11101D!important;
+}
+
+.banner {
+  height: 500px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,16,29,1) 70%, rgba(82,55,122,1) 100%);
+}
+
+.img{
+  opacity: 0.3;
+  height: 500px;
+  width: 100%;
+}
+
+.home-section{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,16,29,1) 70%, rgba(82,55,122,1) 100%);
+}
+
+.titulo-banner{
+  position: absolute;
+  margin: 300px 50% 0px 200px;
+  color: whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+

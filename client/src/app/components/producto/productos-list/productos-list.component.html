@@ -1,0 +1,25 @@
+<app-navigation></app-navigation>
+
+<div class ="container">
+    <app-nav-productos></app-nav-productos>
+    <div class="row">
+        <div class="col-md-4 mt-4" *ngFor="let producto of productos">
+            <div class="card text-center" [class.changeColor] = "producto.cantidad <= producto.stockMinimo" [class.colorRed]="producto.cantidad <= 0" >
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    {{producto.descripcion}}
+                    <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+                <img src="{{producto.imagen}}"  height="200" class="card-img-top">
+                <div class="card-body">
+                    <p class= "text-muted">{{producto.Marca.descripcion}}</p>
+                    <p class="text-muted">Cantidad: {{producto.cantidad}}</p>
+                    <a [routerLink]="['/productos/modificar', producto.id]" class="btn btn-info btn-block"> 
+                        Modificar
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>

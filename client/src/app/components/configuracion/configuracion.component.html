@@ -1,0 +1,53 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="razonSocial" [(ngModel)]='configuracion.razonSocial' placeholder="Ingrese la Razon Social" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cuil" placeholder="Ingrese el CUIL" [(ngModel)]='configuracion.cuil' class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="contador_id" [(ngModel)]='configuracion.Contador.contadorFacturas' class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="celular" [(ngModel)]='configuracion.celular' placeholder="Ingrese el celular" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="direccion" [(ngModel)]='configuracion.direccion' placeholder="Ingrese la direccion" class="form-control" required>
+                        </div>  
+                        <div class="form-group" >
+                            <select name="pais" [(ngModel)]='configuracion.pais_id' (ngModelChange) ="paisSeleccionado(configuracion.pais_id)" class="form-control" >
+                                <option>Seleccione el Pais</option>
+                                <option *ngFor="let pais of paises"  value="{{pais.id}}">{{pais.descripcion}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group" >
+                            <select name="provincia" [(ngModel)]='configuracion.provincia_id' (ngModelChange) ="provinciaSeleccionado(configuracion.provincia_id)" class="form-control" >
+                                <option>Seleccione la Provincia</option>                          
+                                <option *ngFor="let provincia of provinciaSeleccionadas"  value="{{provincia.id}}">{{provincia.descripcion}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group" >
+                            <select name="departamento" [(ngModel)]='configuracion.departamento_id' (ngModelChange) ="departamentoSeleccionado(configuracion.departamento_id)" class="form-control" >
+                                <option>Seleccione el Departamento</option>
+                                <option *ngFor="let departamento of departamentoSeleccionados"  value="{{departamento.id}}">{{departamento.descripcion}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group" >
+                            <select name="localidad" [(ngModel)]='configuracion.localidad_id' class="form-control" >
+                                <option>Seleccione la Localidad</option>
+                                <option *ngFor="let localidad of localidadSeleccionadas"  value="{{localidad.id}}">{{localidad.descripcion}}</option>
+                            </select>
+                        </div> 
+                        <button class= " btn btn-success btn-block" (click)='modificar ? modificarConfiguracion() : agregarConfiguracion()'>Agregar</button>             
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        

@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <div class="col-md-4 mt-5 offset-md-4">
+        <h2 class="title"> Iniciar Sesion</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email"  [(ngModel)]='usuario.email' placeholder="Ingrese el email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="contrasena" [(ngModel)]='usuario.contrasena' placeholder="Ingrese la contrasena" required>
+            </div>                
+            <button class= " btn btn-success btn-block" (click)='validarUsuario()'>Ingresar</button>             
+        </form>
+    </div>
+</div>
+    
+
+    

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+   <div class="container">
+      <!-- Brand -->
+    <img src="/assets/images/logo.png" height="50px" width="100px" alt="logo">  
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Productos
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink='/productos' routerLinkActive="active">Productos</a>
+          <a class="dropdown-item" routerLink='/marca' routerLinkActive="active">Marca</a>
+          <a class="dropdown-item" routerLink='/rubro' routerLinkActive="active">Rubro</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+          Ubicaciones
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink='/pais' routerLinkActive="active">Pais</a>
+          <a class="dropdown-item" routerLink='/provincia' routerLinkActive="active">Provincia</a>
+          <a class="dropdown-item" routerLink='/departamento' routerLinkActive="active">Departamento</a>
+          <a class="dropdown-item" routerLink='/localidad' routerLinkActive="active">Localidad</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"routerLink='/facturas' routerLinkActive="active">Facturas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"routerLink='/clientes' routerLinkActive="active">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"routerLink='/configuracion' routerLinkActive="active">Configuracion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="salir()">Salir</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,58 @@
+<div class="contenedor">
+    <div class="col-md-6 mt-5 offset-md-3">
+        <h2 class="title">Ingrese sus datos para Registrarse</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" [(ngModel)]='cliente.nombre' placeholder="Ingrese el Nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="apellido" [(ngModel)]='cliente.apellido' placeholder="Ingrese el Apellido" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="dni" [(ngModel)]='cliente.dni' placeholder="Ingrese el DNI" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email"  [(ngModel)]='usuario.email' placeholder="Ingrese el email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="contrasena" [(ngModel)]='usuario.contrasena' placeholder="Ingrese la contrasena" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="contrasenaRep" [(ngModel)]='usuario.contrasenaRep' placeholder="Ingrese otra vez la contrasena" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="celular" [(ngModel)]='cliente.celular' placeholder="Ingrese el celular" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="direccion" [(ngModel)]='cliente.direccion' placeholder="Ingrese el domicilio" required>
+            </div>
+            <div class="form-group" >
+                <select name="pais" [(ngModel)]='cliente.pais_id' (ngModelChange) ="paisSeleccionado(cliente.pais_id)" class="form-control" >
+                    <option>Seleccione el Pais</option>
+                    <option *ngFor="let pais of paises"  value="{{pais.id}}">{{pais.descripcion}}</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <select name="provincia" [(ngModel)]='cliente.provincia_id' (ngModelChange) ="provinciaSeleccionado(cliente.provincia_id)" class="form-control" >
+                    <option>Seleccione la Provincia</option>                          
+                    <option *ngFor="let provincia of provinciaSeleccionadas"  value="{{provincia.id}}">{{provincia.descripcion}}</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <select name="departamento" [(ngModel)]='cliente.departamento_id' (ngModelChange) ="departamentoSeleccionado(cliente.departamento_id)" class="form-control" >
+                    <option>Seleccione el Departamento</option>
+                    <option *ngFor="let departamento of departamentoSeleccionados"  value="{{departamento.id}}">{{departamento.descripcion}}</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <select name="localidad" [(ngModel)]='cliente.localidad_id' class="form-control" >
+                    <option>Seleccione la Localidad</option>
+                    <option *ngFor="let localidad of localidadSeleccionadas"  value="{{localidad.id}}">{{localidad.descripcion}}</option>
+                </select>
+            </div> 
+                        
+            <button class= " btn btn-success btn-block" (click)='registrarCliente()'>Agregar</button>             
+        </form>
+    </div>
+</div>
+

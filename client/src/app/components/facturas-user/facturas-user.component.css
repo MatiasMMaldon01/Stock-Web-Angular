@@ -1,0 +1,32 @@
+.home-section{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,16,29,1) 70%, rgba(82,55,122,1) 100%);
+}
+
+table {
+    border: 2px solid #4d5053;
+    border-radius: 15px!important;
+    color: whitesmoke;
+}
+
+table thead{
+    background: rgb(2,0,36)!important;
+}
+
+table tbody{
+    border: 0px;
+    border-radius: 10px!important;
+}
+
+.title{
+    margin: 30px 0px 0px 30%;
+    color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#modal-table{
+    color: black;
+}

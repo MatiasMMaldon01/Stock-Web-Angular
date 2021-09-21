@@ -1,0 +1,13 @@
+table {
+    border: 2px solid #4d5053;
+    border-radius: 15px!important;
+}
+
+table thead{
+    background: rgb(2,0,36)!important;
+}
+
+table tbody{
+    border: 0px;
+    border-radius: 10px!important;
+}

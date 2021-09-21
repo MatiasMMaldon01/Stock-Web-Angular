@@ -1,0 +1,84 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="col-md-14 mt-5">
+      <div class="mb-2">
+        <button class="btn btn-primary" (click)=refresh()>Actualizar</button>
+      </div>
+        <div class="row mb-2">
+            <div class="col">
+              <span>Cliente:</span>
+              <input type="text" class="form-control" [(ngModel)]="cliente" (ngModelChange) ="clienteSeleccionado(cliente)" >
+            </div>
+            <div class="col">
+                <span>Desde:</span>
+              <input type="datetime-local" class="form-control" [(ngModel)]="fechaDesde" (ngModelChange) ="fechaDesdeSeleccionada(fechaDesde)">
+            </div>
+            <div class="col">
+                <span>Hasta:</span>
+                <input type="datetime-local" class="form-control" [(ngModel)]="fechaHasta" (ngModelChange) ="fechaHastaSeleccionada(fechaHasta)" >
+            </div>
+          </div>
+        <table class='table table-white'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre Completo</th>
+                    <th>DNI</th>
+                    <th>Email</th>
+                    <th>Localidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let item of facturasSeleccionadas'>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.Cliente.apellido}}, {{item.Cliente.nombre}}</td>
+                    <td>{{item.Cliente.dni}}</td>
+                    <td>${{item.total}}</td>
+                    <td>{{item.fecha}}</td>  
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="obtenerDetalleComprobante(item.id)">
+                        + Mas Info
+                      </button>
+                    </td>             
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Detalle de Comprobante</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class='table table-white' id="modal-table">
+          <thead class='thead-dark'>
+            <tr>
+                <th>Imagen</th>
+                <th>Descripcion</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let detalle of detalleComprobante'>
+            <tr>
+                <td><img src="{{detalle.Producto.imagen}}" alt="Detalle" width="30px" height="30px"></td>  
+                <td>{{detalle.descripcion}}</td>          
+                <td>{{detalle.cantidad}}</td>  
+                <td>${{detalle.subtotal}}</td>           
+            </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

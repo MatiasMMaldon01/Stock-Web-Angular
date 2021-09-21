@@ -1,0 +1,40 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-4 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" [(ngModel)]='rubro.descripcion' placeholder="Ingrese la descripcion" class="form-control" autofocus>
+                        </div>
+                    <button class= "btn btn-success btn-block" (click)='modificar ? modificarRubro() : agregarRubro()'>Guardar</button>             
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-md-12 mt-5">
+            <table class='table table-white'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descripcion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor='let item of rubros'>
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td> 
+                            <a (click)="eliminarRubro(item.id)" class='btn btn-danger'><i class="fas fa-trash-alt"></i></a>
+                            <a [routerLink]="['/rubro/modificar', item.id]" class='btn btn-info'><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="height: 10px;">
+  <div class="container">
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/sign-in' routerLinkActive="active">Iniciar Sesion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/sign-up' routerLinkActive="active">Registrarse</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<app-side-bar></app-side-bar>
+<section class="home-section">
+  <div class="banner">
+    <h1 class="titulo-banner">Elegi el mejor proveedor de insumos tecnologicos</h1>
+    <img  class="img" src="https://isaydata.com/wp-content/uploads/2021/01/cuarto-gamer-780x437.jpg" alt="">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mt-4 mb-4" *ngFor="let producto of productos">
+            <div class="card text-center" >
+              <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                {{producto.descripcion}}
+              </div>
+              <img src="{{producto.imagen}}"  height="200" class="card-img-top">
+              <div class="card-body">
+                <p class= "text-muted">${{producto.precioVenta}}</p>
+                <a  class="btn btn-warning btn-block" (click)= agregarCarrito(producto.id)> 
+                  Agregar al Carrito
+                </a>
+              </div>
+            </div>
+          </div> 
+        </div>
+    </div>
+</section>
+    
+

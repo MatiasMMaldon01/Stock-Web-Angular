@@ -1,0 +1,71 @@
+<app-side-bar></app-side-bar>
+<section class="home-section">
+    <h1 class="title"> Estas son tus facturas hasta el momento</h1>
+    <div class="container">
+        <div class="col-md-14 mt-5">
+            <table class='table table-white'>
+                <thead class='thead-dark'>
+                    <tr>
+                        <th>N°</th>
+                        <th>Nombre Completo</th>
+                        <th>DNI</th>
+                        <th>Importe</th>
+                        <th>Fecha</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor='let item of facturas; let i = index'>
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{item.Cliente.apellido}}, {{item.Cliente.nombre}}</td>  
+                        <td>{{item.Cliente.dni}}</td>          
+                        <td>${{item.total}}</td>  
+                        <td>{{item.fecha}}</td> 
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="obtenerDetalleComprobante(item.id)">
+                            + Mas Info
+                          </button>
+                        </td>            
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Detalle de Comprobante</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class='table table-white' id="modal-table">
+            <thead class='thead-dark'>
+              <tr>
+                  <th>Imagen</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                  <th>Subtotal</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody *ngFor='let detalle of detalleComprobante'>
+              <tr>
+                  <td><img src="{{detalle.Producto.imagen}}" alt="Detalle" width="30px" height="30px"></td>  
+                  <td>{{detalle.descripcion}}</td>          
+                  <td>{{detalle.cantidad}}</td>  
+                  <td>${{detalle.subtotal}}</td>           
+              </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
