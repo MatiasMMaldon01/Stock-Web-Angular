@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Provincia } from '../../models/Provincia';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProvinciaServicioService {
 
-  API_URI = 'http://localhost:3000/api/provincia';
+  API_URI = environment.HOST_API + 'provincia';
 
   constructor(private http: HttpClient) { }
   

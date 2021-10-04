@@ -20,7 +20,6 @@ import { UsuarioServioService } from 'src/app/services/UsuarioServicio/usuario-s
 export class PerfilComponent implements OnInit {
 
   cliente : Cliente;
-  clienteIngresado: string;
 
   paises : Pais[];
   provincias : Provincia[];
@@ -42,7 +41,6 @@ export class PerfilComponent implements OnInit {
     this.departamentoSeleccionados = [];
     this.localidadSeleccionadas = [];
 
-    this.clienteIngresado = "";
     this.cliente = {
       id : 0,
       nombre : '',

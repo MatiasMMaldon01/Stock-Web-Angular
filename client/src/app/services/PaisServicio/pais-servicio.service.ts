@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Pais } from '../../models/Pais';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaisServicioService {
 
-  API_URI = 'http://localhost:3000/api/pais';
+  API_URI = environment.HOST_API + 'pais';
 
   constructor(private http: HttpClient) { }
   

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Departamento} from '../../models/Departamento';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartamentoService {
 
-  API_URI = 'http://localhost:3000/api/departamento';
+  API_URI = environment.HOST_API +'departamento';
 
   constructor(private http: HttpClient) { }
   

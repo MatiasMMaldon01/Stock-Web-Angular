@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Configuracion } from 'src/app/models/Configuracion';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfiguracionService {
 
-  API_URI = 'http://localhost:3000/api/configuracion';
+  API_URI = environment.HOST_API+ 'configuracion';
 
   constructor(private http: HttpClient) { }
   

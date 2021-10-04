@@ -8,6 +8,7 @@ import { ClienteServicioService } from 'src/app/services/ClienteServicio/cliente
 import { Producto } from 'src/app/models/Producto';
 import { UsuarioServioService } from 'src/app/services/UsuarioServicio/usuario-servio.service';
 import { Cliente } from 'src/app/models/Cliente';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -76,6 +77,7 @@ export class InicioComponent implements OnInit {
   }
   
   ngOnInit(): void {
+
     this.productoServicio.obtener().subscribe(
       res => {
         this.productos = Object.values(res);
@@ -87,6 +89,20 @@ export class InicioComponent implements OnInit {
       this.usuarioServicio.verificarToken().subscribe(
         (res:any) =>{ 
           this.cliente = res;
+          environment.cliente.id = res.id;
+          environment.cliente.nombre = res.nombre;
+          environment.cliente.apellido = res.apellido;
+          environment.cliente.dni = res.dni;
+          environment.cliente.direccion = res.direccion;
+          environment.cliente.celular = res.celular;
+          environment.cliente.usuario_id = res.usuario_id;
+          environment.cliente.Usuario.email = res.Usuario.email;
+          environment.cliente.Usuario.contrasena = res.Usuario.contrasena;
+          environment.cliente.Usuario.esAdmin = res.Usuario.esAdmin;
+          environment.cliente.pais_id = res.pais_id;
+          environment.cliente.provincia_id = res.provincia_id;
+          environment.cliente.departamento_id = res.departamento_id;
+          environment.cliente.localidad_id = res.localidad_id;
         },
         error => console.log(error)
       )

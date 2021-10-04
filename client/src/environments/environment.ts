@@ -3,8 +3,34 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  HOST_API:'http://localhost:3000/api/',
+  cliente:{
+    id : 0,
+    nombre : "",
+    apellido : "",
+    direccion : "",
+    celular : "",
+    dni : "",
+    estaEliminado : false,
+    usuario_id : 0,
+    Usuario: {
+        id : 0,
+        email : "",
+        contrasena : "",
+        esAdmin : false,
+        estaEliminado : false,
+        createdat : Date,
+        updatedat : Date,       
+    },
+    pais_id : 0,
+    provincia_id : 0,
+    departamento_id : 0,
+    localidad_id : 0,
+    createdat : Date,
+    updatedat : Date,
+  }
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
@@ -13,4 +39,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// import 'zone.js/plugins/zone-error',  // Included with Angular CLI.

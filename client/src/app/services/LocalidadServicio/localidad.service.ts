@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Localidad } from '../../models/Localidad';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalidadService {
 
-  API_URI = 'http://localhost:3000/api/localidad';
+  API_URI = environment.HOST_API+ 'localidad';
 
   constructor(private http: HttpClient) { }
   

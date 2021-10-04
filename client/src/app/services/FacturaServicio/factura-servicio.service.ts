@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacturaServicioService {
 
-  API_URI = 'http://localhost:3000/api/venta';
+  API_URI = environment.HOST_API+ 'venta';
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +15,7 @@ export class FacturaServicioService {
     return this.http.post(`${this.API_URI}`, factura);
   }
 
-  obtenerPorcliente = (id: string) => {
+  obtenerPorcliente = (id: number) => {
     return this.http.get(`${this.API_URI}/obtenerPorCliente/${id}`);
   }
 

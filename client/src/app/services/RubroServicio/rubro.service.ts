@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
 import {Rubro} from '../../models/Rubro';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import {Rubro} from '../../models/Rubro';
 
 export class RubroService {
 
-  API_URI = 'http://localhost:3000/api/rubro';
+  API_URI = environment.HOST_API + 'rubro';
 
   constructor(private http: HttpClient) { }
   
