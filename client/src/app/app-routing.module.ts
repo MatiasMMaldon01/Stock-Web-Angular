@@ -22,6 +22,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { FacturasUserComponent } from './components/facturas-user/facturas-user.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 const routes: Routes = [
   {
@@ -121,6 +122,11 @@ const routes: Routes = [
   {
     path: 'localidad/modificar/:id',
     component: LocalidadComponent,
+    canActivate: [AuthAdminGuard]
+  },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent,
     canActivate: [AuthAdminGuard]
   },
   {

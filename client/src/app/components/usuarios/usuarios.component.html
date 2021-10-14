@@ -1,0 +1,25 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-4 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="email" name="email" [(ngModel)]='usuario.email' placeholder="Ingrese el e-mail" class="form-control" autofocus required>
+                            <input type="password" name="contrasena" [(ngModel)]='usuario.contrasena' placeholder="Ingrese la contrasena" class="form-control" autofocus>
+                            <input type="password" name="contrasenaRep" [(ngModel)]='contrasenaRep' placeholder="Ingrese la contrasena" class="form-control" autofocus>
+                            <div class="form-group">
+                                <select name="paises" [(ngModel)]='usuario.esAdmin' class="form-control">
+                                    <option value=true>Administrador</option>
+                                    <option value=false>Usuario Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                    <button class= "btn btn-success btn-block" (click)= 'crearUsuario()'>Guardar</button>             
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

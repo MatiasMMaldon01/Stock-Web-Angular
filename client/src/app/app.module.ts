@@ -39,6 +39,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { FacturasUserComponent } from './components/facturas-user/facturas-user.component';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { ValidacionTokenInterceptor } from './interceptor/validacion-token.interceptor';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { ValidacionTokenInterceptor } from './interceptor/validacion-token.inter
     PerfilComponent,
     FacturasUserComponent,
     FacturasComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
